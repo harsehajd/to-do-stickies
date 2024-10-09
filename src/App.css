@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+body {
+  background-color: #e6eee5;
+  font-family: 'Nunito', sans-serif;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+  color: #2c4a3e;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #2c4a3e;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.form-container {
+  background-color: #c1d5c0;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #2c4a3e;
+}
+
+input[type="text"],
+select {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #7ca789;
+  border-radius: 5px;
+  font-family: 'Nunito', sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+select {
+  background-color: white;
+  cursor: pointer;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #7ca789;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  transition: background-color 0.3s ease;
+  align-self: center;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #5e8c6a;
+}
+
+.sticky-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.sticky-note {
+  background-color: #c1d5c0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 15px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 16px;
+  transform: rotate(var(--rotate, -2deg));
+  transition: transform 0.15s ease-in-out;
+  color: #2c4a3e;
+  position: relative;
+}
+
+.sticky-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sticky-note p {
+  margin: 0 0 10px 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  max-height: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.urgency-label {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #2c4a3e;
+  opacity: 0.7;
+  margin-top: 5px;
+}
+
+.sticky-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.sticky-note:hover {
+  transform: scale(1.05) rotate(0deg);
+}
+
+.sticky-note.low {
+  background-color: #d7e4d4;
+}
+
+.sticky-note.medium {
+  background-color: #b8ccb5;
+}
+
+.sticky-note.high {
+  background-color: #9ab396;
+}
+
+/* Checkbox styles */
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-size: 12px;
+  user-select: none;
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #2c4a3e;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
